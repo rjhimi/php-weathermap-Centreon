@@ -1,1 +1,11 @@
-/
+https://github.com/kozfelipe/centreon-weathermap.git
+
+getfacl /usr/share/centreon/www/modules/centreon-weathermap/poller.php
+setfacl -R -m u:centreon-engine:rwx /usr/share/centreon/www/modules/centreon-weathermap/src/output/
+setfacl -R -m d:u:centreon-engine:rwx /usr/share/centreon/www/modules/centreon-weathermap/src/output/
+getfacl /usr/share/centreon/www/modules/centreon-weathermap/src/output/
+setfacl -R -m d:g:centreon-engine:wx /usr/share/centreon/www/modules/centreon-weathermap/src/output/
+chown -R apache:apache  /usr/share/centreon/www/modules/centreon-weathermap/
+chmod 777  /usr/share/centreon/config/centreon.config.php
+chmod 777 /etc/centreon/centreon.conf.php
+
